@@ -1,6 +1,6 @@
 {
 	"name": "queshot",
-	"version": "1.0",
+	"version": "1.0.0",
 	"author": "tape.io <contact@tape.io>",
 	"description": "a simple resque-like worker queue based on couchdb",
 	"main": "index.js",

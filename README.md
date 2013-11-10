@@ -23,7 +23,7 @@ function (doc) {
 var Q = require('queshot'),
 	C = require('cradle');
 
-var q = Q.createQueue('my queue', new cradle.Connection());
+var q = Q.createQueue('my queue', new C.Connection());
 
 q.createWorker('my worker', 2, function (job, done) {
 	console.log('working on ' + job);
