@@ -1,0 +1,13 @@
+{
+	"name": "queshot",
+	"version": "1.0",
+	"author": "tape.io <contact@tape.io>",
+	"description": "a simple resque-like worker queue based on couchdb",
+	"main": "index.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/doctape/queshot.git"
+	},
+	"keywords": ["worker", "queue", "couchdb"],
+  "license": "MIT"
+}
