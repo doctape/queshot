@@ -1,6 +1,22 @@
 # Queshot
 _A simple worker queue based on couchdb_
 
+## How It Works
+
+_Queshot_ is roughly based on the ideas behind [resque](https://github.com/resque/resque) or even [kue](https://github.com/learnboost/kue) except that instead of being backed by Redis, it relies on the CouchDB.
+
+This gives it that advantage that no additional administration-interface is needed, because nearly everything can be done via the futon interface:
+
+- Editing jobs
+- Viewing the current state of a job
+- Viewing logs of a job
+- Running statistics about the state of jobs
+- etc.
+
+To guarantee that each job is only assigned once, _resque_ and _kue_ use atomic instructions built into Redis. You don't have that in CouchDB.
+
+Instead, _Queshot_ relies on the versioning and update collision feature of CouchDB. Only the worker who doesn't produce a collision upon inserting it's ID into a job document may process the job.
+
 ## Installation
 
 Install via `npm install queshot`
